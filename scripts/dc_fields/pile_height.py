@@ -1,5 +1,9 @@
 import plantpredict as pp
-import pprint as ppr
+import pprint
+
+import os
+import sys
+sys.path.insert(0, "/home/skrhee/Programs/plantpredict-sdk-cookbook/")
 from scripts.authentication.authentication import authenticate
 
 
@@ -8,19 +12,17 @@ api = authenticate()
 
 plant = api.powerplant(
     project_id=111058,
-    prediction_id=701697
-).get_json()
+    prediction_id=890841
+).get()
 
-plant['blocks'][0]['arrays'][0]['inverters'][0]['dcFields'][0]['postHeight'] = 10
-plant['blocks'][0]['arrays'][0]['inverters'][0]['dcFields'][0]['modulesHigh'] = 10
-plant['blocks'][0]['arrays'][0]['inverters'][0]['dcFields'][0]['trackingBacktrackingType'] = 1
+pprint.pprint(plant['blocks'][0]['arrays'][0]['inverters'][0]['dc_fields'])
 
-api.powerplant(
-    project_id=111058,
-    prediction_id=701697
-).update_from_json(
-    plant
-)
+# api.powerplant(
+#     project_id=111058,
+#     prediction_id=701697
+# ).update_from_json(
+#     plant
+# )
 
 
-print('done')
+# print('done')
