@@ -8,8 +8,6 @@ def authenticate():
     """
 
     # --- Auth ---
-    # client_id = '12m3sk0s2qknmgh7deh4cl8n8m'
-    # client_secret = '1g1k4k7m073f8ja40vr88iloupcj44vm1j95taam77b2tgm6h5pd'
     client_id = ''
     client_secret = ''
     base_url = 'https://api.plantpredict.terabase.energy'
